@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Online Shop"
+include(":app")
+include(":core:model")
+include(":core:ui")
+include(":core:data")
+include(":core:feature-api")
+include(":core:database")
+
+include(":feature:sign-in")
+include(":feature:login")

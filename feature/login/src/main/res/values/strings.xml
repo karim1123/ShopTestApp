@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_title">Welcome back</string>
+    <string name="first_name_placeholder">First name</string>
+    <string name="password_placeholder">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="user_not_found_error">User not found, please check your credentials and try again.</string>
+</resources>
