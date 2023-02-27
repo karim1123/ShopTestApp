@@ -28,5 +28,10 @@ fun OnlineShopNavHost(
             navController,
             modifier
         )
+        register(
+            viewModel.catalogApi,
+            navController,
+            modifier
+        )
     }
 }

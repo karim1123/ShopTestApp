@@ -40,6 +40,10 @@ object Versions {
 
     const val SANDWICH_VERSION = "1.3.3"
 
+    const val GLIDE_VERSION = "4.15.0"
+
+    const val LANDSCAPIST_VERSION = "2.1.4"
+
     const val JUNIT4_VERSION = "4.13.2"
     const val JUNIT4_EXT_VERSION = "1.1.5"
 
@@ -53,36 +57,54 @@ object Versions {
 object Libs {
     // Jetpack Compose
     const val composeUi = "androidx.compose.ui:ui:${Versions.COMPOSE_VERSION}"
-    const val composeMaterial = "androidx.compose.material:material:${Versions.COMPOSE_MATERIAL_VERSION}"
-    const val composeMaterial3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3_VERSION}"
-    const val composeUiTooling = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE_VERSION}"
-    const val composeActivity = "androidx.activity:activity-compose:${Versions.COMPOSE_ACTIVITY_VERSION}"
-    const val composeLifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.LIFECYCLE_VERSION}"
-    const val accompanistPermissions = "com.google.accompanist:accompanist-permissions:${Versions.PERMISSIONS}"
-    const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
+    const val composeMaterial =
+        "androidx.compose.material:material:${Versions.COMPOSE_MATERIAL_VERSION}"
+    const val composeMaterial3 =
+        "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3_VERSION}"
+    const val composeUiTooling =
+        "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE_VERSION}"
+    const val composeActivity =
+        "androidx.activity:activity-compose:${Versions.COMPOSE_ACTIVITY_VERSION}"
+    const val composeLifecycleViewModel =
+        "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.LIFECYCLE_VERSION}"
+    const val accompanistPermissions =
+        "com.google.accompanist:accompanist-permissions:${Versions.PERMISSIONS}"
+    const val composeNavigation =
+        "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
 
     // Dagger - Hilt
-    const val hiltAndroid =  "com.google.dagger:hilt-android:${Versions.HILT_VERSION}"
-    const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.HILT_VERSION}"
-    const val hiltLifecycleViewModel =  "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT_LIFECYCLE_VERSION}"
+    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.HILT_VERSION}"
+    const val hiltAndroidCompiler =
+        "com.google.dagger:hilt-android-compiler:${Versions.HILT_VERSION}"
+    const val hiltLifecycleViewModel =
+        "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT_LIFECYCLE_VERSION}"
     const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.HILT_COMPILER_VERSION}"
-    const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:${Versions.HILT_NAVIGATION_COMPOSE_VERSION}"
+    const val hiltNavigationCompose =
+        "androidx.hilt:hilt-navigation-compose:${Versions.HILT_NAVIGATION_COMPOSE_VERSION}"
 
     // Retrofit 2
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT_VERSION}"
     const val moshi = "com.squareup.retrofit2:converter-moshi:${Versions.RETROFIT_VERSION}"
-    const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR_VERSION}"
+    const val interceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR_VERSION}"
 
     // Sandwich
     const val sandwich = "com.github.skydoves:sandwich:${Versions.SANDWICH_VERSION}"
 
     const val androidCore = "androidx.core:core-ktx:${Versions.ANDROIDX_CORE_VERSION}"
-    const val lifecycleKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE_VERSION}"
+    const val lifecycleKtx =
+        "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE_VERSION}"
 
     // Room
     const val roomRuntime = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM_VERSION}"
     const val roomKtx = "androidx.room:room-ktx:${Versions.ROOM_VERSION}"
+
+    // Glide
+    const val glide = "com.github.bumptech.glide:glide:${Versions.GLIDE_VERSION}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.GLIDE_VERSION}"
+
+    const val landScapist = "com.github.skydoves:landscapist-glide:${Versions.LANDSCAPIST_VERSION}"
 
     // ||
     // TESTING
@@ -91,8 +113,10 @@ object Libs {
     // Jetpack Compose
     const val composeTestingUi = "androidx.compose.ui:ui-test-junit4:${Versions.COMPOSE_VERSION}"
     const val composeTestingUiTooling = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE_VERSION}"
-    const val composeTestingUiManifest = "androidx.compose.ui:ui-test-manifest:${Versions.COMPOSE_VERSION}"
-    const val composeRuntime = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.COMPOSE_RUNTIME}"
+    const val composeTestingUiManifest =
+        "androidx.compose.ui:ui-test-manifest:${Versions.COMPOSE_VERSION}"
+    const val composeRuntime =
+        "androidx.lifecycle:lifecycle-runtime-compose:${Versions.COMPOSE_RUNTIME}"
 
     // Junit 4
     const val junit4 = "junit:junit:${Versions.JUNIT4_VERSION}"
@@ -108,5 +132,6 @@ object Libs {
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.LEAK_CANARY}"
 
     // Coroutines
-    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_VERSION}"
+    const val coroutinesTest =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_VERSION}"
 }

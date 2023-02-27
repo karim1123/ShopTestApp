@@ -8,23 +8,31 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 
 fun lightColors() = OnlineShopColors(
-    background = Background,
+    background = White,
     title = Title,
     inputTextContainer = InputTextContainer,
     inputTextPlaceholder = InputTextPlaceholder,
     enabledButton = EnabledButton,
     buttonText = ButtonText,
+    selectedBottomBarItem = SelectedBottomBarItem,
+    unselectedBottomBarItem = UnselectedBottomBarItem,
+    categoryTitle = CategoryTitle,
+    sectionTitle = SectionTitle,
     error = Color.Red,
     isLight = true
 )
 
 fun darkColors() = OnlineShopColors(
-    background = Background,
+    background = White,
     title = Title,
     inputTextContainer = InputTextContainer,
     inputTextPlaceholder = InputTextPlaceholder,
     enabledButton = EnabledButton,
     buttonText = ButtonText,
+    selectedBottomBarItem = SelectedBottomBarItem,
+    unselectedBottomBarItem = UnselectedBottomBarItem,
+    categoryTitle = CategoryTitle,
+    sectionTitle = SectionTitle,
     error = Color.Red,
     isLight = false
 )

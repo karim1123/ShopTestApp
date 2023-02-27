@@ -19,6 +19,8 @@ include(":core:ui")
 include(":core:data")
 include(":core:feature-api")
 include(":core:database")
+include(":core:network")
 
 include(":feature:sign-in")
 include(":feature:login")
+include ':feature:catalog'

@@ -49,6 +49,7 @@ dependencies {
     implementation(project(":core:feature-api"))
     implementation(project(":feature:sign-in"))
     implementation(project(":feature:login"))
+    implementation(project(":feature:catalog"))
 
     implementation(Libs.composeUi)
     implementation(Libs.composeMaterial)

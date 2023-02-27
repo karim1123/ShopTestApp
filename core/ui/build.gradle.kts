@@ -42,4 +42,8 @@ dependencies {
     implementation(Libs.hiltAndroid)
     kapt(Libs.hiltAndroidCompiler)
     implementation(Libs.hiltNavigationCompose)
+
+    implementation(Libs.glide)
+    annotationProcessor(Libs.glideCompiler)
+    implementation(Libs.landScapist)
 }

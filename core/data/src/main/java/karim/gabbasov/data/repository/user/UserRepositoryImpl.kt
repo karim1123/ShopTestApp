@@ -3,10 +3,10 @@ package karim.gabbasov.data.repository.user
 import karim.gabbasov.database.UserDao
 import karim.gabbasov.database.UserEntity.Companion.toUserDomain
 import karim.gabbasov.database.UserEntity.Companion.toUserEntity
-import karim.gabbasov.model.data.UserDomain
+import karim.gabbasov.model.data.user.UserDomain
 import javax.inject.Inject
 
-class UserRepositoryImpl @Inject constructor(
+internal class UserRepositoryImpl @Inject constructor(
     private val userDao: UserDao
 ) : UserRepository {
 

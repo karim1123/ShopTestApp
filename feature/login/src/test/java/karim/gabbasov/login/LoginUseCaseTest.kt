@@ -6,7 +6,7 @@ import io.mockk.mockk
 import karim.gabbasov.data.repository.user.UserRepository
 import karim.gabbasov.login.core.LoginResult
 import karim.gabbasov.login.core.LoginUseCase
-import karim.gabbasov.model.data.UserDomain
+import karim.gabbasov.model.data.user.UserDomain
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals

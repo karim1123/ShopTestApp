@@ -1,4 +1,4 @@
-package karim.gabbasov.model.data
+package karim.gabbasov.model.data.user
 
 data class UserDomain(
     val email: String,

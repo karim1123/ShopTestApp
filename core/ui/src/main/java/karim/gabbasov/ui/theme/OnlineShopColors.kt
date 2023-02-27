@@ -14,6 +14,10 @@ class OnlineShopColors(
     enabledButton: Color,
     buttonText: Color,
     error: Color,
+    selectedBottomBarItem: Color,
+    unselectedBottomBarItem: Color,
+    categoryTitle: Color,
+    sectionTitle: Color,
     isLight: Boolean,
 ) {
     var background by mutableStateOf(background)
@@ -34,6 +38,18 @@ class OnlineShopColors(
     var buttonText by mutableStateOf(buttonText)
         private set
 
+    var selectedBottomBarItem by mutableStateOf(selectedBottomBarItem)
+        private set
+
+    var unselectedBottomBarItem by mutableStateOf(unselectedBottomBarItem)
+        private set
+
+    var categoryTitle by mutableStateOf(categoryTitle)
+        private set
+
+    var sectionTitle by mutableStateOf(sectionTitle)
+        private set
+
     var error by mutableStateOf(error)
         private set
 
@@ -47,6 +63,10 @@ class OnlineShopColors(
         inputTextPlaceholder: Color = this.inputTextPlaceholder,
         enabledButton: Color = this.enabledButton,
         buttonText: Color = this.buttonText,
+        selectedBottomBarItem: Color = this.selectedBottomBarItem,
+        unselectedBottomBarItem: Color = this.unselectedBottomBarItem,
+        categoryTitle: Color = this.categoryTitle,
+        sectionTitle: Color = this.sectionTitle,
         error: Color = this.error,
         isLight: Boolean = this.isLight
     ) = OnlineShopColors(
@@ -56,6 +76,10 @@ class OnlineShopColors(
         inputTextPlaceholder = inputTextPlaceholder,
         enabledButton = enabledButton,
         buttonText = buttonText,
+        selectedBottomBarItem = selectedBottomBarItem,
+        unselectedBottomBarItem = unselectedBottomBarItem,
+        categoryTitle = categoryTitle,
+        sectionTitle = sectionTitle,
         error = error,
         isLight = isLight
     )
@@ -67,6 +91,10 @@ class OnlineShopColors(
         inputTextPlaceholder = other.inputTextPlaceholder
         enabledButton = other.enabledButton
         buttonText = other.buttonText
+        selectedBottomBarItem = other.selectedBottomBarItem
+        unselectedBottomBarItem = other.unselectedBottomBarItem
+        categoryTitle = other.categoryTitle
+        sectionTitle = other.sectionTitle
         error = other.error
         isLight = other.isLight
     }

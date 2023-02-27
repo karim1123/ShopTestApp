@@ -26,9 +26,12 @@ android {
 dependencies {
     implementation(project(":core:database"))
     implementation(project(":core:model"))
+    implementation(project(":core:network"))
 
+    implementation(Libs.sandwich)
     implementation(Libs.hiltAndroid)
     kapt(Libs.hiltAndroidCompiler)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
     testImplementation(Libs.junit4)
     androidTestImplementation(Libs.junit4Ext)

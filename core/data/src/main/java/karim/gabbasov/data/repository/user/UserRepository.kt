@@ -1,6 +1,6 @@
 package karim.gabbasov.data.repository.user
 
-import karim.gabbasov.model.data.UserDomain
+import karim.gabbasov.model.data.user.UserDomain
 
 interface UserRepository {
 

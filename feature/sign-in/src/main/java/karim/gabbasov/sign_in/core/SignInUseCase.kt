@@ -2,7 +2,7 @@ package karim.gabbasov.sign_in.core
 
 import karim.gabbasov.data.repository.user.UserApiResponse
 import karim.gabbasov.data.repository.user.UserRepository
-import karim.gabbasov.model.data.UserDomain
+import karim.gabbasov.model.data.user.UserDomain
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
