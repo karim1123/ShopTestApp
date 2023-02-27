@@ -57,12 +57,12 @@ internal fun SignInScreenRoute(
     viewModel: SignInViewModel = hiltViewModel()
 ) {
     val state = viewModel.uiState.collectAsState()
-    val context = LocalContext.current
     val navigate = state.value.navigateScreenEvent
     if (navigate == true) {
         LaunchedEffect(navigate) {
-            // navigate
-            Toast.makeText(context, "Sign in executed", Toast.LENGTH_LONG).show()
+            val catalogFeatureApi = viewModel.catalogFeatureApi
+            navController.popBackStack()
+            navController.navigate(catalogFeatureApi.catalogRoute())
         }
     }
     SignInScreen(

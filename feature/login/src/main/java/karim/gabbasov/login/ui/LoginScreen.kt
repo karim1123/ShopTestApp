@@ -45,6 +45,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import karim.gabbasov.login.R
 import karim.gabbasov.ui.theme.Black
 import karim.gabbasov.ui.theme.OnlineShopTheme
@@ -56,15 +57,16 @@ import kotlinx.coroutines.flow.MutableStateFlow
 
 @Composable
 internal fun LoginScreenRoute(
+    navController: NavHostController,
     viewModel: LoginVewModel = hiltViewModel()
 ) {
     val state = viewModel.uiState.collectAsState()
-    val context = LocalContext.current
     val navigate = state.value.navigateScreenEvent
     if (navigate == true) {
         LaunchedEffect(navigate) {
-            // navigate
-            Toast.makeText(context, "Login executed", Toast.LENGTH_LONG).show()
+            val catalogFeatureApi = viewModel.catalogFeatureApi
+            navController.popBackStack()
+            navController.navigate(catalogFeatureApi.catalogRoute())
         }
     }
     LoginScreen(

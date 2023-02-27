@@ -3,6 +3,7 @@ package karim.gabbasov.login.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import karim.gabbasov.feature_api.features.CatalogFeatureApi
 import karim.gabbasov.login.R
 import karim.gabbasov.login.core.LoginResult
 import karim.gabbasov.login.core.LoginUseCase
@@ -15,7 +16,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 internal class LoginVewModel @Inject constructor(
-    private val loginUseCase: LoginUseCase
+    private val loginUseCase: LoginUseCase,
+    val catalogFeatureApi: CatalogFeatureApi
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(UIState.empty)

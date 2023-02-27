@@ -19,7 +19,9 @@ class LoginNavigation : LoginFeatureApi {
         modifier: Modifier
     ) {
         navGraphBuilder.composable(route) {
-            LoginScreenRoute()
+            LoginScreenRoute(
+                navController = navController
+            )
         }
     }
 }

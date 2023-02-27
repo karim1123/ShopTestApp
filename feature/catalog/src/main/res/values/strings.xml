@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phones_title">Phones</string>
+    <string name="headphones_title">Headphones</string>
+    <string name="games_title">Games</string>
+    <string name="cars_title">Crs</string>
+    <string name="furniture_title">Furniture</string>
+    <string name="kids_title">Kids</string>
+    <string name="first_part_of_top_bar">Trade by</string>
+    <string name="second_part_of_top_bar">bata</string>
+    <string name="location_title">Location</string>
+    <string name="view_all_title">View all</string>
+    <string name="latest_title">Latest</string>
+    <string name="flash_sale_title">Flash Sale</string>
+    <string name="latest_product_price_value">$ %1$d,000</string>
+    <string name="sale_value">%1$d%2$s off</string>
+    <string name="favorite_description">favorite</string>
+    <string name="no_network_error_title">No network connection</string>
+    <string name="no_network_error_body">Check the Internet connection</string>
+    <string name="search_placeholder">What are you looking for?</string>
+    <string name="brands_title">Brands</string>
+</resources>

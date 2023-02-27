@@ -2,7 +2,7 @@ package karim.gabbasov.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import karim.gabbasov.model.data.UserDomain
+import karim.gabbasov.model.data.user.UserDomain
 
 @Entity
 data class UserEntity(

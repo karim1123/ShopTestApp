@@ -3,7 +3,6 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
       <module name="Online_Shop.core.common" target="11" />
-      <module name="Online_Shop.core.network" target="11" />
       <module name="Online_Shop.feature.forecast" target="11" />
     </bytecodeTargetLevel>
   </component>

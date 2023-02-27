@@ -3,6 +3,7 @@ package karim.gabbasov.login
 import io.mockk.clearAllMocks
 import io.mockk.coEvery
 import io.mockk.mockk
+import karim.gabbasov.feature_api.features.CatalogFeatureApi
 import karim.gabbasov.login.core.LoginResult
 import karim.gabbasov.login.core.LoginUseCase
 import karim.gabbasov.login.ui.LoginVewModel
@@ -23,12 +24,16 @@ class LoginVewModelTest {
 
     private val useCase = mockk<LoginUseCase>()
     private lateinit var viewModel: LoginVewModel
+    private val catalogApi = mockk<CatalogFeatureApi>()
 
     @Before
     fun setup() {
         clearAllMocks()
         Dispatchers.setMain(UnconfinedTestDispatcher())
-        viewModel = LoginVewModel(useCase)
+        viewModel = LoginVewModel(
+            loginUseCase = useCase,
+            catalogFeatureApi = catalogApi
+        )
     }
 
     @Test

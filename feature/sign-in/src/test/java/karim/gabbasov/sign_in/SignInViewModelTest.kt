@@ -4,6 +4,7 @@ import io.mockk.clearAllMocks
 import io.mockk.coEvery
 import io.mockk.mockk
 import karim.gabbasov.data.repository.user.UserRepository
+import karim.gabbasov.feature_api.features.CatalogFeatureApi
 import karim.gabbasov.feature_api.features.LoginFeatureApi
 import karim.gabbasov.sign_in.core.SignInResult
 import karim.gabbasov.sign_in.core.SignInUseCase
@@ -24,6 +25,7 @@ class SignInViewModelTest {
 
     private val useCase = mockk<SignInUseCase>()
     private val loginApi = mockk<LoginFeatureApi>()
+    private val catalogApi = mockk<CatalogFeatureApi>()
     private lateinit var viewModel: SignInViewModel
 
     @Before
@@ -32,7 +34,8 @@ class SignInViewModelTest {
         Dispatchers.setMain(UnconfinedTestDispatcher())
         viewModel = SignInViewModel(
             signInUseCase = useCase,
-            loginFeatureApi = loginApi
+            loginFeatureApi = loginApi,
+            catalogFeatureApi = catalogApi
         )
     }
 
@@ -95,7 +98,8 @@ class SignInViewModelTest {
             val loginApi = mockk<LoginFeatureApi>()
             val viewModel = SignInViewModel(
                 signInUseCase = useCase,
-                loginFeatureApi = loginApi
+                loginFeatureApi = loginApi,
+                catalogFeatureApi = catalogApi
             )
 
             viewModel.apply {

@@ -35,6 +35,72 @@ data class OnlineShopTypography(
         fontSize = 10.sp,
         lineHeight = 12.sp,
         letterSpacing = (-0.3).sp
+    ),
+    val appBarTitle: TextStyle = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp,
+        lineHeight = 24.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val categoryTitle: TextStyle = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 8.sp,
+        lineHeight = 12.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val sectionTitle: TextStyle = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 15.sp,
+        lineHeight = 23.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val viewAllTitle: TextStyle = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 9.sp,
+        lineHeight = 14.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val smallCategoryTitle: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 6.sp,
+        lineHeight = 9.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val smallProductName: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 9.sp,
+        lineHeight = 14.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val smallProductPrice: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 7.sp,
+        lineHeight = 11.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val saleTitle: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 10.sp,
+        lineHeight = 15.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val mediumCategoryTitle: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 9.sp,
+        lineHeight = 14.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val mediumProductName: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 13.sp,
+        lineHeight = 20.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val mediumProductPrice: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 10.sp,
+        lineHeight = 15.sp,
+        letterSpacing = (-0.3).sp
     )
 )
 
