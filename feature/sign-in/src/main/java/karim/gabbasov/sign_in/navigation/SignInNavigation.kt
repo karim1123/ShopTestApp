@@ -4,12 +4,13 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import karim.gabbasov.feature_api.NavigationRoute
 import karim.gabbasov.feature_api.features.SignInFeatureApi
 import karim.gabbasov.sign_in.ui.SignInScreenRoute
 
 class SignInNavigation : SignInFeatureApi {
 
-    private val route = "signIn"
+    private val route = NavigationRoute.SIGN_IN.route
 
     override fun signInRoute() = route
 

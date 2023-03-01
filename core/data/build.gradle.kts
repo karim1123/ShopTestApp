@@ -37,5 +37,4 @@ dependencies {
     androidTestImplementation(Libs.junit4Ext)
     testImplementation(Libs.mockk)
     testImplementation(Libs.coroutinesTest)
-    testImplementation(Libs.robolectric)
 }

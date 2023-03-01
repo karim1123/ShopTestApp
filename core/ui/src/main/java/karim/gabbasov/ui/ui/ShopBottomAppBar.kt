@@ -44,7 +44,11 @@ fun ShopBottomAppBar(
                     selectedIconColor = OnlineShopTheme.colors.selectedBottomBarItem,
                     unselectedIconColor = OnlineShopTheme.colors.unselectedBottomBarItem
                 ),
-                onClick = { onItemClick(item) },
+                onClick = {
+                    if (item.route.isNotEmpty()) {
+                        onItemClick(item)
+                    }
+                },
                 icon = {
                     Icon(
                         imageVector = item.icon,

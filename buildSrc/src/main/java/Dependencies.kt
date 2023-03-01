@@ -16,6 +16,8 @@ object Versions {
     const val LIFECYCLE_VERSION = "2.5.1"
     const val JVM_VERSION = "1.8"
 
+    const val ACTIVITY_VERSION ="1.6.1"
+
     const val COROUTINES_VERSION = "1.6.4"
 
     const val COMPOSE_VERSION = "1.3.2"
@@ -55,6 +57,9 @@ object Versions {
 }
 
 object Libs {
+    // Activity
+    const val activityKtx = "androidx.activity:activity-ktx:${Versions.ACTIVITY_VERSION}"
+
     // Jetpack Compose
     const val composeUi = "androidx.compose.ui:ui:${Versions.COMPOSE_VERSION}"
     const val composeMaterial =

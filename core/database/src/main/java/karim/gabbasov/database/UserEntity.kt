@@ -8,21 +8,24 @@ import karim.gabbasov.model.data.user.UserDomain
 data class UserEntity(
     @PrimaryKey val firstName: String,
     val email: String,
-    val lastName: String
+    val lastName: String,
+    val imageUri: String?
 ) {
     companion object {
         fun UserEntity.toUserDomain(): UserDomain =
             UserDomain(
                 email = email,
                 firstName = firstName,
-                lastName = lastName
+                lastName = lastName,
+                imageUri = imageUri
             )
 
         fun UserDomain.toUserEntity(): UserEntity =
             UserEntity(
                 email = email,
                 firstName = firstName,
-                lastName = lastName
+                lastName = lastName,
+                imageUri = imageUri
             )
     }
 }

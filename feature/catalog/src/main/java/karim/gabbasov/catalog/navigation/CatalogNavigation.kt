@@ -5,11 +5,12 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import karim.gabbasov.catalog.ui.CatalogScreenRoute
+import karim.gabbasov.feature_api.NavigationRoute
 import karim.gabbasov.feature_api.features.CatalogFeatureApi
 
 class CatalogNavigation : CatalogFeatureApi {
 
-    private val route = "catalog"
+    private val route = NavigationRoute.CATALOG.route
 
     override fun catalogRoute() = route
 

@@ -40,6 +40,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import karim.gabbasov.sign_in.R
 import karim.gabbasov.ui.theme.AccountQuestion
@@ -56,7 +57,7 @@ internal fun SignInScreenRoute(
     navController: NavHostController,
     viewModel: SignInViewModel = hiltViewModel()
 ) {
-    val state = viewModel.uiState.collectAsState()
+    val state = viewModel.uiState.collectAsStateWithLifecycle()
     val navigate = state.value.navigateScreenEvent
     if (navigate == true) {
         LaunchedEffect(navigate) {

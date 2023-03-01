@@ -6,7 +6,6 @@ import io.mockk.mockk
 import karim.gabbasov.data.repository.user.UserRepository
 import karim.gabbasov.login.core.LoginResult
 import karim.gabbasov.login.core.LoginUseCase
-import karim.gabbasov.model.data.user.UserDomain
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
@@ -41,7 +40,7 @@ class LoginUseCaseTest {
 
     @Test
     fun `User not exist, Then UserNotFound error returned`() = runTest {
-        coEvery { repository.getUser(any()) } returns null
+        coEvery { repository.authorize(any()) } returns false
 
         val result = useCase("firstName", "password")
 
@@ -50,12 +49,7 @@ class LoginUseCaseTest {
 
     @Test
     fun `Given successful login, Then Success is returned`() = runTest {
-        val user = UserDomain(
-            email = "email",
-            firstName = "firstName",
-            lastName = "lastName"
-        )
-        coEvery { repository.getUser(any()) } returns user
+        coEvery { repository.authorize(any()) } returns true
 
         val result = useCase("firstName", "password")
 

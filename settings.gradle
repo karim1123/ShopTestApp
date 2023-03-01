@@ -23,4 +23,5 @@ include(":core:network")
 
 include(":feature:sign-in")
 include(":feature:login")
-include ':feature:catalog'
+include(":feature:catalog")
+include(":feature:profile")
