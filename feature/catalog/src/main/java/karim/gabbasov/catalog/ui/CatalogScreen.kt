@@ -62,6 +62,7 @@ internal fun CatalogScreenRoute(
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     val searchState by viewModel.foundProduct.collectAsStateWithLifecycle()
+    val user = viewModel.user.collectAsStateWithLifecycle()
 
     OnlineShopTheme {
         CatalogScreen(
@@ -70,7 +71,10 @@ internal fun CatalogScreenRoute(
             searchState = searchState,
             onSearchInput = { viewModel.findProducts(it) },
             onUpdateClick = { viewModel.loadCatalogData() },
-            navController = navController
+            navController = navController,
+            userUrl = user.value?.imageUri.toString(),
+            catalogNavRoute = viewModel.catalogFeatureApi.catalogRoute(),
+            profileNavRoute = viewModel.profileFeatureApi.profileRoute()
         )
     }
 }
@@ -83,16 +87,19 @@ private fun CatalogScreen(
     searchState: List<String?>,
     onSearchInput: (String) -> Unit,
     onUpdateClick: () -> Unit,
-    navController: NavHostController
+    navController: NavHostController,
+    profileNavRoute: String,
+    catalogNavRoute: String,
+    userUrl: String
 ) {
     Scaffold(
         containerColor = OnlineShopTheme.colors.background,
-        topBar = { CatalogTopBar() },
+        topBar = { CatalogTopBar(userUrl) },
         bottomBar = {
             ShopBottomAppBar(
                 items = listOf(
                     BottomNavItem(
-                        route = "catalog",
+                        route = catalogNavRoute,
                         icon = ImageVector.vectorResource(ic_home)
                     ),
                     BottomNavItem(
@@ -108,12 +115,16 @@ private fun CatalogScreen(
                         icon = ImageVector.vectorResource(ic_chat)
                     ),
                     BottomNavItem(
-                        route = "",
+                        route = profileNavRoute,
                         icon = ImageVector.vectorResource(ic_profile)
                     )
                 ),
                 navController = navController,
-                onItemClick = {}
+                onItemClick = {
+                    navController.navigate(it.route) {
+                        launchSingleTop = true
+                    }
+                }
             )
         }
     ) {

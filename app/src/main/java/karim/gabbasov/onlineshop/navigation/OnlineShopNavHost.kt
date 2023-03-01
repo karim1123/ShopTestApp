@@ -16,7 +16,7 @@ fun OnlineShopNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = viewModel.signInAPi.signInRoute()
+        startDestination = viewModel.getStartDestination()
     ) {
         register(
             viewModel.signInAPi,
@@ -30,6 +30,11 @@ fun OnlineShopNavHost(
         )
         register(
             viewModel.catalogApi,
+            navController,
+            modifier
+        )
+        register(
+            viewModel.profileApi,
             navController,
             modifier
         )

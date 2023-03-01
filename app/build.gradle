@@ -47,9 +47,11 @@ android {
 dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:feature-api"))
+    implementation(project(":core:data"))
     implementation(project(":feature:sign-in"))
     implementation(project(":feature:login"))
     implementation(project(":feature:catalog"))
+    implementation(project(":feature:profile"))
 
     implementation(Libs.composeUi)
     implementation(Libs.composeMaterial)

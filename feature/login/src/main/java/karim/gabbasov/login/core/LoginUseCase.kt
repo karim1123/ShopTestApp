@@ -27,8 +27,8 @@ internal class LoginUseCase @Inject constructor(
     }
 
     private suspend fun login(firstName: String): LoginResult = withContext(Dispatchers.IO) {
-        val response = userRepository.getUser(firstName)
-        if (response != null) return@withContext LoginResult.Success
+        val response = userRepository.authorize(firstName)
+        if (response) return@withContext LoginResult.Success
         else return@withContext LoginResult.UserNotFound
     }
 }

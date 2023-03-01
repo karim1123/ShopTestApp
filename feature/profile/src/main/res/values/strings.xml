@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="top_bar_nav_description">Back</string>
+    <string name="top_bar_title">Profile</string>
+    <string name="upload_button_text">Upload item</string>
+    <string name="menu_nav_description">Open %1$s</string>
+    <string name="balance_value">$ %1$d</string>
+    <string name="balance_description">Balance</string>
+    <string name="trade_store_title">Trade store</string>
+    <string name="payment_methods_title">Payment methods</string>
+    <string name="trade_history_title">Trade history</string>
+    <string name="restore_purchase_title">Restore purchase</string>
+    <string name="help_title">Help</string>
+    <string name="log_out_title">Log out</string>
+    <string name="change_photo_title">Chang photo</string>
+</resources>

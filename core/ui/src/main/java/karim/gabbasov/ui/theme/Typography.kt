@@ -101,7 +101,25 @@ data class OnlineShopTypography(
         fontSize = 10.sp,
         lineHeight = 15.sp,
         letterSpacing = (-0.3).sp
-    )
+    ),
+    val profileTopBarTitle: TextStyle = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 15.sp,
+        lineHeight = 18.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val menuItemBody: TextStyle = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp,
+        lineHeight = 17.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val userInfo: TextStyle = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 15.sp,
+        lineHeight = 18.sp,
+        letterSpacing = (-0.3).sp
+    ),
 )
 
 val LocalTypography = staticCompositionLocalOf { OnlineShopTypography() }
