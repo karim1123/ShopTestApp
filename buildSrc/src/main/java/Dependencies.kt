@@ -44,6 +44,8 @@ object Versions {
 
     const val GLIDE_VERSION = "4.15.0"
 
+    const val VIEW_PAGER = "0.27.0"
+
     const val LANDSCAPIST_VERSION = "2.1.4"
 
     const val JUNIT4_VERSION = "4.13.2"
@@ -76,6 +78,7 @@ object Libs {
         "com.google.accompanist:accompanist-permissions:${Versions.PERMISSIONS}"
     const val composeNavigation =
         "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
+    const val viewPager = "com.google.accompanist:accompanist-pager:${Versions.VIEW_PAGER}"
 
     // Dagger - Hilt
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.HILT_VERSION}"

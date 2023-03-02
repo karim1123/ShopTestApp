@@ -10,6 +10,8 @@ import karim.gabbasov.network.ShopApi
 import karim.gabbasov.network.model.FlashSaleDto
 import karim.gabbasov.network.model.FoundProductsDto
 import karim.gabbasov.network.model.LatestDto
+import karim.gabbasov.network.model.ProductDetailsDto
+import karim.gabbasov.network.model.ProductDetailsDto.Companion.toProductDetailsEntity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import okhttp3.MediaType
@@ -175,5 +177,68 @@ class ShopRepositoryImplTest {
             val result = repository.findProducts("S")
 
             assertEquals(expected, result)
+        }
+
+    @Test
+    fun `loadProductDetails return Error when getProductsDetails response is a Failure Error`() =
+        runTest {
+            val responseBody = mockk<ResponseBody>()
+            val mediaType = mockk<MediaType>()
+            coEvery { responseBody.contentType() } returns mediaType
+            coEvery { responseBody.contentLength() } returns 1
+            val response = Response.error<ProductDetailsDto>(404, responseBody)
+            val apiProductDetails = ApiResponse.Failure.Error(response)
+
+            coEvery { api.getProductsDetails() } returns apiProductDetails
+
+            val result = repository.loadProductDetails()
+
+            assertEquals(ShopApiResult.NetworkError, result)
+        }
+
+    @Test
+    fun `loadProductDetails return Error when getProductsDetails response body is a null`() =
+        runTest {
+            val responseBody = mockk<ResponseBody>()
+            val mediaType = mockk<MediaType>()
+            coEvery { responseBody.contentType() } returns mediaType
+            coEvery { responseBody.contentLength() } returns 1
+            val productDetailsDto = null
+            val apiProductDetails = ApiResponse.Success(Response.success(productDetailsDto))
+            coEvery { api.getProductsDetails() } returns apiProductDetails
+
+            val result = repository.loadProductDetails()
+
+            assertEquals(ShopApiResult.NetworkError, result)
+        }
+
+    @Test
+    fun `loadProductDetails return Success when getProductsDetails return Success`() =
+        runTest {
+            val responseBody = mockk<ResponseBody>()
+            val mediaType = mockk<MediaType>()
+            coEvery { responseBody.contentType() } returns mediaType
+            coEvery { responseBody.contentLength() } returns 1
+            val productDetailsDto = ProductDetailsDto(
+                name = "name",
+                description = "description",
+                rating = 4.2,
+                numberOfReviews = 4000,
+                price = 24,
+                colors = listOf("color1", "color2", "color3"),
+                imageUrls = listOf("url1", "url2", "url3")
+            )
+            val apiProductDetails = ApiResponse.Success(Response.success(productDetailsDto))
+            coEvery { api.getProductsDetails() } returns apiProductDetails
+
+            val result = repository.loadProductDetails()
+
+            assertEquals(
+                ShopApiResult.Success(
+                    products = null,
+                    productDetails = productDetailsDto.toProductDetailsEntity()
+                ),
+                result
+            )
         }
 }

@@ -33,7 +33,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import karim.gabbasov.catalog.R
-import karim.gabbasov.catalog.ui.CatalogSectionTitle
 import karim.gabbasov.model.data.shop.ProductEntity
 import karim.gabbasov.ui.theme.CategoryBackground
 import karim.gabbasov.ui.theme.CategoryText
@@ -78,7 +77,7 @@ private fun LatestProduct(
         shape = OnlineShopTheme.shapes.small,
         elevation = CardDefaults.cardElevation(defaultElevation = 10.dp)
     ) {
-        Box() {
+        Box {
             NetworkImage(url = product.imageUrl)
             Box(
                 modifier = Modifier.fillMaxSize(),

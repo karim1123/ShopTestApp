@@ -65,18 +65,23 @@ internal fun LoginScreenRoute(
     val navigate = state.value.navigateScreenEvent
     if (navigate == true) {
         LaunchedEffect(navigate) {
-            val catalogFeatureApi = viewModel.catalogFeatureApi
-            navController.popBackStack()
-            navController.navigate(catalogFeatureApi.catalogRoute())
+            navController.navigate(viewModel.catalogFeatureApi.catalogRoute()) {
+                popUpTo(navController.graph.id) {
+                    inclusive = true
+                }
+            }
         }
     }
-    LoginScreen(
-        state = state,
-        onFirstNameChanged = { viewModel.execute(LoginViewAction.FirstNameChanged(it)) },
-        onPasswordChanged = { viewModel.execute(LoginViewAction.PasswordChanged(it)) },
-        onLoginPressed = { viewModel.execute(LoginViewAction.LoginPressed) },
-        onErrorShown = { viewModel.execute(LoginViewAction.ErrorObserved) }
-    )
+
+    OnlineShopTheme {
+        LoginScreen(
+            state = state,
+            onFirstNameChanged = { viewModel.execute(LoginViewAction.FirstNameChanged(it)) },
+            onPasswordChanged = { viewModel.execute(LoginViewAction.PasswordChanged(it)) },
+            onLoginPressed = { viewModel.execute(LoginViewAction.LoginPressed) },
+            onErrorShown = { viewModel.execute(LoginViewAction.ErrorObserved) }
+        )
+    }
 }
 
 @Composable
@@ -180,7 +185,7 @@ private fun PasswordInput(
                     keyboardController?.hide()
                 }
             },
-        ),
+        )
     ) {
         TextFieldDefaults.TextFieldDecorationBox(
             value = password,

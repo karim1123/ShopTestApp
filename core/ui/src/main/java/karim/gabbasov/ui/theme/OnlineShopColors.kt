@@ -18,6 +18,8 @@ class OnlineShopColors(
     unselectedBottomBarItem: Color,
     categoryTitle: Color,
     sectionTitle: Color,
+    purchaseCardBackground: Color,
+    purchaseCardButton: Color,
     isLight: Boolean,
 ) {
     var background by mutableStateOf(background)
@@ -50,6 +52,12 @@ class OnlineShopColors(
     var sectionTitle by mutableStateOf(sectionTitle)
         private set
 
+    var purchaseCardBackground by mutableStateOf(purchaseCardBackground)
+        private set
+
+    var purchaseCardButton by mutableStateOf(purchaseCardButton)
+        private set
+
     var error by mutableStateOf(error)
         private set
 
@@ -67,6 +75,8 @@ class OnlineShopColors(
         unselectedBottomBarItem: Color = this.unselectedBottomBarItem,
         categoryTitle: Color = this.categoryTitle,
         sectionTitle: Color = this.sectionTitle,
+        purchaseCardBackground: Color = this.purchaseCardBackground,
+        purchaseCardButton: Color = this.purchaseCardButton,
         error: Color = this.error,
         isLight: Boolean = this.isLight
     ) = OnlineShopColors(
@@ -80,6 +90,8 @@ class OnlineShopColors(
         unselectedBottomBarItem = unselectedBottomBarItem,
         categoryTitle = categoryTitle,
         sectionTitle = sectionTitle,
+        purchaseCardBackground = purchaseCardBackground,
+        purchaseCardButton = purchaseCardButton,
         error = error,
         isLight = isLight
     )
@@ -95,6 +107,8 @@ class OnlineShopColors(
         unselectedBottomBarItem = other.unselectedBottomBarItem
         categoryTitle = other.categoryTitle
         sectionTitle = other.sectionTitle
+        purchaseCardBackground = other.purchaseCardBackground
+        purchaseCardButton = other.purchaseCardButton
         error = other.error
         isLight = other.isLight
     }
