@@ -4,5 +4,6 @@ enum class NavigationRoute(val route: String) {
     LOGIN("login"),
     SIGN_IN("signIn"),
     CATALOG("catalog"),
-    PROFILE("profile")
+    PROFILE("profile"),
+    PRODUCT_DETAILS("productDetails")
 }

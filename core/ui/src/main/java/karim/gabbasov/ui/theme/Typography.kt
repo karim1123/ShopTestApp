@@ -120,6 +120,29 @@ data class OnlineShopTypography(
         lineHeight = 18.sp,
         letterSpacing = (-0.3).sp
     ),
+    val productDetailsName: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 17.sp,
+        lineHeight = 26.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val productDetailsPrice: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 13.sp,
+        lineHeight = 20.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val productDetailsDescription: TextStyle = TextStyle(
+        fontSize = 9.sp,
+        lineHeight = 14.sp,
+        letterSpacing = (-0.3).sp
+    ),
+    val purchaseButton: TextStyle = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 8.sp,
+        lineHeight = 12.sp,
+        letterSpacing = (-0.3).sp
+    )
 )
 
 val LocalTypography = staticCompositionLocalOf { OnlineShopTypography() }

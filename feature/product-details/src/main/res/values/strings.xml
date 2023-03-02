@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="product_price_body">$ %1$d</string>
+    <string name="product_number_of_reviews_body">(%1$d reviews)</string>
+    <string name="rating_description">Rating %1$f</string>
+    <string name="color_title">Color:</string>
+    <string name="quantity_value">Quantity: %1$d</string>
+    <string name="add_product_to_cart">Add product to cart</string>
+    <string name="remove_product_from_cart">Remove item from cart</string>
+    <string name="add_to_card_button_body">ADD TO CARD</string>
+    <string name="app_bar_nav_body">Back</string>
+    <string name="add_to_favorite_body">Add to favorite</string>
+    <string name="share_body">Share</string>
+</resources>

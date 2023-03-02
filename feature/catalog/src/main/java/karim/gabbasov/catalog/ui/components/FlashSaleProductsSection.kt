@@ -37,7 +37,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import karim.gabbasov.catalog.R
-import karim.gabbasov.catalog.ui.CatalogSectionTitle
 import karim.gabbasov.model.data.shop.ProductEntity
 import karim.gabbasov.ui.theme.CategoryBackground
 import karim.gabbasov.ui.theme.CategoryText
@@ -49,7 +48,8 @@ import karim.gabbasov.ui.ui.util.NetworkImage
 @Composable
 internal fun FlashSaleProductsSection(
     modifier: Modifier = Modifier,
-    latestProducts: List<ProductEntity>
+    latestProducts: List<ProductEntity>,
+    onProductDetails: (String) -> Unit
 ) {
     Column(
         modifier = modifier
@@ -66,7 +66,8 @@ internal fun FlashSaleProductsSection(
                         modifier = Modifier
                             .height(220.dp)
                             .width(160.dp),
-                        product = product
+                        product = product,
+                        onProductDetails
                     )
                 }
             }
@@ -78,9 +79,11 @@ internal fun FlashSaleProductsSection(
 private fun DiscountedProduct(
     modifier: Modifier = Modifier,
     product: ProductEntity,
+    onProductDetails: (String) -> Unit
 ) {
     Card(
-        modifier = modifier,
+        modifier = modifier
+            .clickable { onProductDetails(product.name) },
         shape = OnlineShopTheme.shapes.small,
         elevation = CardDefaults.cardElevation(defaultElevation = 10.dp)
     ) {

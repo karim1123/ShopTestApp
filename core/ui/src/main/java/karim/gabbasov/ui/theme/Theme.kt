@@ -18,6 +18,8 @@ fun lightColors() = OnlineShopColors(
     unselectedBottomBarItem = UnselectedBottomBarItem,
     categoryTitle = CategoryTitle,
     sectionTitle = SectionTitle,
+    purchaseCardBackground = PurchaseCardBackground,
+    purchaseCardButton = PurchaseCardButton,
     error = Color.Red,
     isLight = true
 )
@@ -33,6 +35,8 @@ fun darkColors() = OnlineShopColors(
     unselectedBottomBarItem = UnselectedBottomBarItem,
     categoryTitle = CategoryTitle,
     sectionTitle = SectionTitle,
+    purchaseCardBackground = PurchaseCardBackground,
+    purchaseCardButton = PurchaseCardButton,
     error = Color.Red,
     isLight = false
 )

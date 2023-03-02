@@ -5,6 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import karim.gabbasov.data.repository.auth.AuthRepository
 import karim.gabbasov.feature_api.features.CatalogFeatureApi
 import karim.gabbasov.feature_api.features.LoginFeatureApi
+import karim.gabbasov.feature_api.features.ProductDetailsFeatureApi
 import karim.gabbasov.feature_api.features.ProfileFeatureApi
 import karim.gabbasov.feature_api.features.SignInFeatureApi
 import javax.inject.Inject
@@ -15,7 +16,8 @@ class MainActivityViewModel @Inject constructor(
     val signInAPi: SignInFeatureApi,
     val loginApi: LoginFeatureApi,
     val catalogApi: CatalogFeatureApi,
-    val profileApi: ProfileFeatureApi
+    val profileApi: ProfileFeatureApi,
+    val productDetailsApi: ProductDetailsFeatureApi
 ) : ViewModel() {
 
     fun getStartDestination(): String {

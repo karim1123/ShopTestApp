@@ -61,23 +61,28 @@ internal fun SignInScreenRoute(
     val navigate = state.value.navigateScreenEvent
     if (navigate == true) {
         LaunchedEffect(navigate) {
-            val catalogFeatureApi = viewModel.catalogFeatureApi
-            navController.popBackStack()
-            navController.navigate(catalogFeatureApi.catalogRoute())
+            navController.navigate(viewModel.catalogFeatureApi.catalogRoute()) {
+                popUpTo(navController.graph.id) {
+                    inclusive = true
+                }
+            }
         }
     }
-    SignInScreen(
-        state = state,
-        onFirstNameChanged = { viewModel.execute(SignInViewAction.FirstNameChanged(it)) },
-        onLastNameChanged = { viewModel.execute(SignInViewAction.LastNameChanged(it)) },
-        onEmailChanged = { viewModel.execute(SignInViewAction.EmailChanged(it)) },
-        onSignInPressed = { viewModel.execute(SignInViewAction.SignInPressed) },
-        onErrorShown = { viewModel.execute(SignInViewAction.ErrorObserved) },
-        onLoginPressed = {
-            val loginFeatureApi = viewModel.loginFeatureApi
-            navController.navigate(loginFeatureApi.loginRoute())
-        }
-    )
+
+    OnlineShopTheme {
+        SignInScreen(
+            state = state,
+            onFirstNameChanged = { viewModel.execute(SignInViewAction.FirstNameChanged(it)) },
+            onLastNameChanged = { viewModel.execute(SignInViewAction.LastNameChanged(it)) },
+            onEmailChanged = { viewModel.execute(SignInViewAction.EmailChanged(it)) },
+            onSignInPressed = { viewModel.execute(SignInViewAction.SignInPressed) },
+            onErrorShown = { viewModel.execute(SignInViewAction.ErrorObserved) },
+            onLoginPressed = {
+                val loginFeatureApi = viewModel.loginFeatureApi
+                navController.navigate(loginFeatureApi.loginRoute())
+            }
+        )
+    }
 }
 
 @Composable

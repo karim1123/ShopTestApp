@@ -4,6 +4,7 @@ import com.skydoves.sandwich.ApiResponse
 import karim.gabbasov.network.model.FlashSaleDto
 import karim.gabbasov.network.model.FoundProductsDto
 import karim.gabbasov.network.model.LatestDto
+import karim.gabbasov.network.model.ProductDetailsDto
 import retrofit2.http.GET
 
 interface ShopApi {
@@ -22,4 +23,9 @@ interface ShopApi {
         "/v3/4c9cd822-9479-4509-803d-63197e5a9e19?word=f"
     )
     suspend fun getProductsNames(): ApiResponse<FoundProductsDto>
+
+    @GET(
+        "/v3/f7f99d04-4971-45d5-92e0-70333383c239"
+    )
+    suspend fun getProductsDetails(): ApiResponse<ProductDetailsDto>
 }

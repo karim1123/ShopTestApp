@@ -15,8 +15,6 @@
     <string name="latest_product_price_value">$ %1$d,000</string>
     <string name="sale_value">%1$d%2$s off</string>
     <string name="favorite_description">favorite</string>
-    <string name="no_network_error_title">No network connection</string>
-    <string name="no_network_error_body">Check the Internet connection</string>
     <string name="search_placeholder">What are you looking for?</string>
     <string name="brands_title">Brands</string>
 </resources>

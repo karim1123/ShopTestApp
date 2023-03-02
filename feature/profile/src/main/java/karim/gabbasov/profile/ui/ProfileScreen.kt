@@ -49,27 +49,25 @@ internal fun ProfileScreenRoute(
     viewModel: ProfileViewModel = hiltViewModel()
 ) {
     val user = viewModel.user.collectAsStateWithLifecycle()
-    ProfileScreen(
-        navController = navController,
-        user = user,
-        onChangeAvatar = { viewModel.updateUserAvatar(it) },
-        onLogOut = {
-            viewModel.logOut()
-            navController.popBackStack()
-            navController.navigate(viewModel.signInFeatureApi.signInRoute())
-        },
-        onBack = {
-            val previousRoute = navController.previousBackStackEntry?.destination?.route
-            navController.popBackStack()
-            previousRoute?.let {
-                navController.navigate(it) {
-                    launchSingleTop = true
+
+    OnlineShopTheme {
+        ProfileScreen(
+            navController = navController,
+            user = user,
+            onChangeAvatar = { viewModel.updateUserAvatar(it) },
+            onLogOut = {
+                viewModel.logOut()
+                navController.navigate(viewModel.signInFeatureApi.signInRoute()) {
+                    popUpTo(navController.graph.id) {
+                        inclusive = true
+                    }
                 }
-            }
-        },
-        catalogNavRoute = viewModel.catalogFeatureApi.catalogRoute(),
-        profileNavRoute = viewModel.profileFeatureApi.profileRoute()
-    )
+            },
+            onBack = { navController.popBackStack() },
+            catalogNavRoute = viewModel.catalogFeatureApi.catalogRoute(),
+            profileNavRoute = viewModel.profileFeatureApi.profileRoute()
+        )
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -112,9 +110,14 @@ private fun ProfileScreen(
                 ),
                 navController = navController,
                 onItemClick = {
-                    if (it.route == catalogNavRoute) navController.popBackStack()
                     navController.navigate(it.route) {
-                        launchSingleTop = true
+                        if (it.route == catalogNavRoute) {
+                            popUpTo(navController.graph.id) {
+                                inclusive = true
+                            }
+                        } else {
+                            launchSingleTop = true
+                        }
                     }
                 }
             )
